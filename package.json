@@ -1,0 +1,38 @@
+{
+  "name": "jul-comments",
+  "version": "1.1.0",
+  "description": "JCS - JUL Comment System",
+  "main": "index.php",
+  "scripts": {
+    "deps": "node_modules/.bin/bower --allow-root install",
+    "make": "node_modules/.bin/gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zonebuilder/jul-comments.git"
+  },
+  "keywords": [
+    "UI",
+    "documenting"
+  ],
+  "author": "The Zonebuilder",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/zonebuilder/jul-comments/issues"
+  },
+  "homepage": "https://github.com/zonebuilder/jul-comments#readme",
+  "devDependencies": {
+    "bower": "*",
+    "gulp": "*",
+    "gulp-add-src": "*",
+    "gulp-clean": "*",
+    "gulp-concat": "*",
+    "gulp-jshint": "*",
+    "gulp-load-plugins": "*",
+    "gulp-rename": "*",
+    "gulp-strip-comments": "*",
+    "jshint": "*",
+    "merge-stream": "*"
+  }
+}

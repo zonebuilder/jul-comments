@@ -1,2 +1,52 @@
-# jul-comments
 JCS - JUL Comment System
+========================
+
+About
+-----
+
+JCS - JUL Comment System is a way of documenting your JavaScript source code 
+while keeping the comments in a separate file. 
+It allows you to associate the comments to any version of the source code 
+and to get the updated commented code. 
+Also, JCS is able to generate and to document the code 
+for an entire JavaScript namespace or DOM tree loaded by a web page. 
+
+License
+-------
+ 
+ Licensed under GPLv2 or later and under LGPLv3 or later. See enclosed 'licenses' folder.
+Features
+--------
+
+* generates documented code from JavaScript source code or from runtime code
+* saves the comments as a separate project for reuse and management of documenting different versions of the code
+* recognizes types of data and generates comments blocks accordingly
+* splits a JavaScript namespace into a custom number of child namespaces as documented source files with their corresponding code
+* downloading the collection of generated source files as a zip package
+
+
+System requirements
+-------------------
+
+* A CSS2 compliant web browser with JavaScript 1.5 or later engine
+* A web server with PHP 5.2.0 or later extension
+* 1024x768 minimum resolution
+
+Build and install
+-----------------
+
+Install [Node.js](https://nodejs.org/) and [Git](https://git-scm.com/) command line in your system.
+Rub the following shell commands in order:
+
+``` bash
+	npm install
+	npm run deps
+	npm run make
+```
+The release will be in 'build' folder.
+
+Downloads & User support
+------------------------
+
+[jul-comments project on SourceForge](http://sourceforge.net/projects/jul-comments/)
+

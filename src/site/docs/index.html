@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>JCS Help</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="shortcut icon" href="../media/favicon.ico" />
+    <link type="text/css"
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed%7CVarela"
+      rel="stylesheet" />
+    <style type="text/css">
+html, body, h1, h2, h3, p, div, li {
+	margin: 0;
+	padding: 0;
+}
+body {
+	padding: 1em;
+	font-family: "Helvetica", Helvetica, sans-serif;
+	font-size: 13px;
+	color: #1c1c1c;
+	background-color: #f3f3f3;
+}
+div.section {
+	margin: 1.5em 0;
+}
+div.section-2 {
+	margin: 1em 0;
+}
+div.section-3 {
+	margin: 0.5em 0;
+}
+.section ul {
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 1.2em;
+}
+#content {
+	max-width: 960px;
+	margin: 0 auto;
+}
+#logo {
+	height: 200px;
+}
+#logo-left {
+	padding: 60px 10px 0 10px;
+	float: left;
+}
+#logo-right {
+	padding: 60px 0 0 20px;
+	float: left;
+}
+logo-clear {
+	clear: both;
+}
+h1 {
+	font-family: "Roboto Condensed", Arial, sans-serif;
+	font-size: 60px;
+}
+</style>
+  </head>
+  <body>
+    <div id="content">
+      <div id="top" class="section">
+        <div id="logo">
+          <div id="logo-left"> <img alt="JCS"
+              src="../media/braces120.png" width="160" height="120" /> </div>
+          <div id="logo-right">
+            <h1>JCS</h1>
+            <p>Version 1.1</p>
+            <p>Copyright © 2015 - 2016 <a target="_blank"
+href="http://www.google.com/search?hl=en&amp;num=50&amp;start=0&amp;safe=0&amp;filter=0&amp;nfpr=1&amp;q=The+Zonebuilder+web+development+programming+IT+society+philosophy+politics">
+                The Zonebuilder</a></p>
+          </div>
+        </div>
+      </div>
+      <div id="toc" class="section">
+        <h2>Table of contents</h2>
+        <ul>
+          <li><a href="#about">About JCS</a>
+            <ul>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#requirements">System requirements</a></li>
+              <li><a href="#install">Installation</a></li>
+            </ul>
+          </li>
+          <li><a href="#using-jcs">Using JCS</a>
+            <ul>
+              <li><a href="#what-code">What kind of code is generated?</a></li>
+              <li><a href="#creating-project">Creating a project</a></li>
+              <li><a href="#adding-comments">Adding comments</a></li>
+              <li><a href="#generated-files">Generated files</a></li>
+              <li><a href="#other-custom">Other custom operations</a></li>
+              <li><a href="#file-config">File configuration</a></li>
+              <li><a href="#saving">Saving the project & downloading the code</a></li>
+            </ul>
+          </li>
+          <li><a href="#interface">Elements of the interface</a>
+            <ul>
+              <li><a href="#edit-dialog">The edit dialog box</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="about" class="section">
+        <h2>About JCS</h2>
+        <p>JCS - <a target="_blank" href="http://sourceforge.net/projects/jul-javascript/">JUL</a> Comment System 
+		is a way of documenting your JavaScript source code while keeping the comments in a separate file. It allows 
+		you to associate the comments to any version of the source code and to get the updated commented code. 
+		 Also, JCS is able to generate and to document the code for an entire JavaScript namespace or 
+		 DOM tree loaded by a web page.
+        </p>
+        <div id="features" class="section-2">
+          <h3>Features</h3>
+          <ul>
+			<li>generates documented code from JavaScript source code or from runtime code</li>
+			<li>saves the comments as a separate project for reuse and management of documenting different versions of the code</li>
+			<li>recognizes types of data and generates comments blocks accordingly</li>
+			<li>splits a JavaScript namespace into  a custom number of child namespaces as documented source files with their corresponding code</li>
+			<li>downloading the collection of generated source files as a zip package</li>
+
+          </ul>
+        </div>
+        <div id="requirements" class="section-2">
+          <h3>System requirements</h3>
+          <ul>
+            <li>A CSS2 compliant web browser with JavaScript 1.5 or later engine</li>
+            <li> A web server with PHP 5.2.0 or later extension</li>
+            <li>1024x768 minimum resolution</li>
+          </ul>
+        </div>
+        <div id="install" class="section-2">
+          <h3>Installation</h3>
+          <p>Unpack the distribution archive to a directory of your web site. If necessary, give the web server process write
+            permissions over the 'assets' directory (eg. on Linux type  as root: <code>chmod 777 assets</code> or <code>chown www-data assets</code>). 
+			Navigate to the the installation directory using a web browser. 
+			</p>
+        </div>
+        <div><a class="to-top" href="#top">Back to top</a></div>
+      </div>
+      <div id="using-jcs" class="section">
+        <h2>Using JCS</h2>
+        <p>In order to generate the code, you must supply a web page which creates some JavaScript objects. 
+		The typical procedure is to include the scripts that generate the configuration objects in a page 
+		from your site and navigate to that page using JCS. The loaded page or site and the JCS application 
+		should adhere to Same Domain Policy (SDP). A practical case is installing JCS in a location 
+		on your web server and to document with it a site from the same server. As we will see later, 
+		it is not mandatory to create special pages for documenting your sites.
+        </p>
+      <div id="what-code" class="section-2">
+        <h3>What kind of code is generated?</h3>
+        <p>JCS uses JUL to generate JavaScript code, so you should generally document configuration objects 
+		and namespaces. But JCS can generate code for any DOM tree loaded in the page, while only the formatting 
+		being specifying to JUL tool. Each generated file has a simple templating system that allows you 
+		to wrap the JUL code with custom JavaScript code. With these two features, a large variety of 
+		JavaScript code can be documented in JCS. It is worth mentioning that, in a way, any program 
+		can be regarded and rewritten as an initial configuration tree.
+        </p>
+      </div>
+      <div id="creating-project" class="section-2">
+        <h3>Creating a project</h3>
+        <p>A project holds the comments for an entire JavaScript namespace or a configuration tree. 
+		You can create a project from the ‘NP’ button on the top toolbar or by entering a site and finding 
+		an object directly in the main screen. The configurable members defining a project are:
+        </p>
+        <ul>
+				<li>project namespace - uniquely identifies the project, not necessary the same as the default object path</li>
+				<li>project title - user friendly title of the project</li>
+				<li>preferred site - the initial page where is searched the object or the namespace to work with</li>
+				<li>default object/namespace path - the initial object or namespace to generate the code for</li>
+				<li>maximum DOM levels to display - the depth of the namespace descendants to show. 
+				The generated code will not be affected by this setting.</li>
+				<li>list of paths to fully show – these paths will not be affected by the maximum 
+				number of levels to show</li>
+				<li>copyright header - copyright comment to display first in each generated file</li>
+				<li><a target="_blank" href="http://www.jslint.com/" >JSLint</a>/<a target="_blank" href="http://jshint.com/">JSHint</a> 
+				directives - linting comments for one of the popular JavaScript tools. They are copied and may be edited for each generated file.</li>
+				<li>comma separated paths to exclude - the objects inside these paths will not generate output code and 
+				won’t show up in the interface. Used to avoid parsing of certain unnecessary runtime objects.</li>
+				<li>use JUL to wrap around objects – the top objects/namespaces (of class Object) in each 
+				generated file will be wrapped by a JUL.ns + JUL.apply construct</li>
+        </ul>
+      </div>
+      <div id="adding-comments" class="section-2">
+        <h3>Adding comments</h3>
+        <p>You can add comment blocks by selecting any object shown in the DOM tree in the bottom left of the main screen. 
+		Each JavaDoc comment tag is considered as being a field either single line or multiline that can appear 
+		in the comment block at the specified position. JCS offers field templates for the most used JavaDoc, 
+		but you can also enter a custom field with custom multiline content.<br />
+		There is a special Meta field ‘&lt;replace&gt;’ that applies the replace method 
+		over the code fragment in the preview pane and that doesn’t generate comment content. 
+		This field may be repeated to get a fully customized code fragment for the current object.
+		<br />The comment pane in the top center offers a comment block generator that hints 
+		the current object data type and generates a default comment block for it.
+		<br />Changes made in the comment pane are immediately reflected in the preview pane at top right. 
+		That displays the generated code fragment together with its comment block if available. If the comment isn’t saved, 
+		the caption of the preview pane ends with an asterisk.
+		<br />To save a comment, press ‘Apply’ button. The code pane that contains the content of the generated files 
+		will reflect the change.
+        </p>
+      	<div><a class="to-top" href="#top">Back to top</a></div>
+      </div>
+      <div id="generated-files" class="section-2">
+        <h3>Generated files</h3>
+        <p>For each object in the DOM tree pane, there are custom actions available as checkboxes in the toolbar 
+		at the bottom of the pane. The first check ‘separate file, put outside’ allows you 
+		to generate a separate file holding the code for that node and its descendents. 
+		The code in that file will not appear in the other files. The ‘put outside’ textbox may contain 
+		member names of the current object that will appear outside the main code at the end of the file. 
+		This allows splitting large trees of code in several sub-trees put one offer the other.
+		</p>
+      </div>
+      <div id="other-custom" class="section-2">
+        <h3>Other custom operations</h3>
+        <p>If an object is a function, JCS can generate its prototype code by checking the ‘show prototype’ checkbox 
+		in the bottom toolbar of the DOM tree pane.<br />
+		For each node in DOM tree pane has an object data type, JCS can sort its members, putting the private ones 
+		(those who start with an underscore) last, by checking the ‘sort members’ checkbox in the same toolbar.
+        </p>
+      </div>
+      <div id="file-config" class="section-2">
+        <h3>File configuration</h3>
+        <p>At the bottom of the main screen, there is the code pane that shows the generated comments files.<br />
+		Each file has several properties that can be accessed with the ‘Properties’ button at the top right in the code pane, 
+		These properties are:</p>
+		<ul>
+			<li><a target="_blank" href="http://www.jslint.com/" >JSLint</a>/<a target="_blank" href="http://jshint.com/">JSHint</a> 
+			directives - initially inherited form the project ones, you can modify them here for the current file</li>
+			<li>file template - simple template system to generate and customize file code. 
+			Available template variables are: ‘{copyright}’ the project copyright header, ‘{fileOverview}’ the file overview comment block, 
+			‘{jslint}’ the limiting directives, and ‘{code}’ the generated JavaScript commented code.</li>
+		</ul>
+		<p>Besides using the ‘separate file’ checkbox, a file can be removed using the ‘Remove’ button 
+		in the top right corner of the code pane. Removing a file puts its content into the parent file
+		 i.e. the file with the namespace immediately above the removed file. The root file corresponding to the root 
+		 of the displayed DOM tree cannot be removed (you can change the root path though, making this file an inner one).
+        </p>
+      </div>
+      <div id="saving" class="section-2">
+        <h3>Saving the project & downloading the code</h3>
+        <p>While the project is being modified, the ‘Save project’ button is enabled, allowing saving 
+		the current contents of the project. After successfully saving the project, the ‘Download code’ button becomes enabled 
+		and you can download the collection of the generated file as a zip package.
+		<br />Saving a project does filter the memorized comments and its file structure upon the default object/namespace path 
+		that is used to generate its contents. This avoids bloating a project with unnecessary content as is being updated 
+		by the ‘save’ operations.
+        </p>
+      </div>
+      <div><a class="to-top" href="#top">Back to top</a></div>
+    </div>
+    <div id="interface" class="section">
+      <h2>Elements of the interface</h2>
+      <div id="edit-dialog" class="section-2">
+        <h3>The edit dialog box</h3>
+        <p>Comment fields that are multiline have a ‘Edit’ button at their right side. This launches the edit dialog 
+		which allows entering multiline content in that field. If the field has multiple lines, 
+		its textbox is read-only, the edit button being the only means to change the content.
+        </p>
+      </div>
+      <div><a class="to-top" href="#top">Back to top</a></div>
+    </div>
+    </div>
+  </body>
+</html>
