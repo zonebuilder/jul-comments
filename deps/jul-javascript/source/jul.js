@@ -1,5 +1,5 @@
 /*
-	JUL - The JavaScript UI Language module version 1.2.2
+	JUL - The JavaScript UI Language module version 1.2.5
 	Copyright (c) 2012 - 2016 The Zonebuilder (zone.builder@gmx.com)
 	http://sourceforge.net/projects/jul-javascript/
 	Licenses: GPLv2 or later; LGPLv3 or later (http://sourceforge.net/p/jul-javascript/wiki/License/)
@@ -107,7 +107,7 @@ JUL = {};
 
 
 JUL = {
-	version: '1.2.2',
+	version: '1.2.5',
 	apply: function(oSource, oAdd, bDontReplace) {
 		if (!oAdd || typeof oAdd !== 'object') { return oSource; }
 		var aMembers = [].concat(oAdd);
@@ -203,6 +203,7 @@ if (typeof Array.prototype.map !== 'function') {
 'use strict';
 
 
+JUL.ns('JUL.Ref');
 
 JUL.Ref = function(oRef, sKey) {
 	if (!(this instanceof JUL.Ref)) {
@@ -224,7 +225,8 @@ JUL.Ref = function(oRef, sKey) {
 		}
 	}
 };
-JUL.Ref.prototype = {
+
+JUL.apply(JUL.Ref.prototype,  {
 	del: function() {
 		delete this._ref[this._key];
 		return this;
@@ -250,9 +252,7 @@ JUL.Ref.prototype = {
 		}
 		return this._ref[this._key];
 	}
-};
-
-JUL.Ref.prototype.constructor = JUL.Ref;
+});
 
 })();
 
@@ -261,7 +261,9 @@ JUL.Ref.prototype.constructor = JUL.Ref;
 'use strict';
 
 
-JUL.UI = {
+JUL.ns('JUL.UI');
+
+JUL.apply(JUL.UI,  {
 	bindingProperty: 'cid',
 	childrenProperty: 'children',
 	classProperty: 'xclass',
@@ -274,6 +276,7 @@ JUL.UI = {
 	membersProperties: [],
 	parentProperty: 'parent',
 	parserProperty: 'parserConfig',
+	referencePrefix: '#ref:',
 	tagProperty: 'tag',
 	topDown: false,
 	useTags: false,
@@ -283,6 +286,8 @@ JUL.UI = {
 		 xul: 'http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul'
 	},
 	Parser: function(oConfig) {
+			var oThis = this;
+			this.Parser = function(oConfig) { JUL.UI.Parser.call(oThis, oConfig); };
 			this.Parser.prototype = this;
 		JUL.apply(this, oConfig);
 	},
@@ -388,23 +393,30 @@ JUL.UI = {
 				}
 				oCurrent.val(oNew);
 				for (var sItem in oNew) {
-					if (oNew.hasOwnProperty(sItem) && typeof oNew[sItem] === 'object' &&
-						[].concat(this.childrenProperty, this.membersProperties).indexOf(sItem) > -1) {
-						var aMembers = [].concat(oNew[sItem]);
-						var sType = JUL.typeOf(oNew[sItem]);
-						if (sType === 'Array' || this.topDown) {
-							for (var n = 0; n < aMembers.length; n++) {
-									aNextNodes.push(new JUL.Ref({ref: aMembers, key: n, parent: oCurrent}));
+					if (oNew.hasOwnProperty(sItem)) {
+						if (this.referencePrefix && typeof oNew[sItem] === 'string' &&
+							oNew[sItem].substr(0, this.referencePrefix.length) === this.referencePrefix) {
+								var sGet = JUL.trim(oNew[sItem].substr(this.referencePrefix.length));
+								oNew[sItem] = sGet ? JUL.get(sGet) : null;
 							}
-						}
-						else {
-								aNextNodes.push(new JUL.Ref({ref: oNew, key: sItem, parent: oCurrent}));
-						}
-						if (this.topDown) {
-							delete oNew[sItem];
-						}
-						else {
-							if (sType === 'Array') { oNew[sItem] = aMembers; }
+						if (typeof oNew[sItem] === 'object' &&
+							[].concat(this.childrenProperty, this.membersProperties).indexOf(sItem) > -1) {
+							var aMembers = [].concat(oNew[sItem]);
+							var sType = JUL.typeOf(oNew[sItem]);
+							if (sType === 'Array' || this.topDown) {
+								for (var n = 0; n < aMembers.length; n++) {
+										aNextNodes.push(new JUL.Ref({ref: aMembers, key: n, parent: oCurrent}));
+								}
+							}
+							else {
+									aNextNodes.push(new JUL.Ref({ref: oNew, key: sItem, parent: oCurrent}));
+							}
+							if (this.topDown) {
+								delete oNew[sItem];
+							}
+							else {
+								if (sType === 'Array') { oNew[sItem] = aMembers; }
+							}
 						}
 					}
 				}
@@ -889,7 +901,7 @@ JUL.UI = {
 			return this._jsonReplacer.call(oData && typeof oData === 'object' ? oData : window, _sKey, oValue);
 		}
 	}
-};
+});
 
 JUL.UI.Parser.prototype = JUL.UI;
 

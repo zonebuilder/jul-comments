@@ -1,5 +1,5 @@
 /*
-	JUL Comment System (JCS) version 1.1
+	JUL Comment System (JCS) version 1.1.1
 	Copyright (c) 2015 - 2016 The Zonebuilder (zone.builder@gmx.com)
 	http://sourceforge.net/projects/jul-comments/
 	Licenses: GPLv2 or later; LGPLv3 or later (http://sourceforge.net/p/jul-comments/wiki/License/)
@@ -24,3 +24,6 @@
 	 * A web server with PHP 5.2.0 or later extension
 	 * 1024x768 minimum resolution
 */
+/* jshint browser: true, curly: true, eqeqeq: true, expr: true, funcscope: true, immed: true, latedef: true, loopfunc: true,  
+	onevar: true, newcap: true, noarg: true, node: true, strict: true, trailing: true, undef: true, unused: vars, wsh: true */
+/* globals ample, JUL */
