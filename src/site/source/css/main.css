@@ -38,6 +38,11 @@ div.caption {
 	font-weight: bold;
 	font-size: 12px;
 }
+button.apply {
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 14px;
+}
 .field input, button.field {
 	color: #1c1c1c;
 }
