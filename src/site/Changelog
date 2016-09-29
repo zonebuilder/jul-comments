@@ -1,3 +1,7 @@
+v1.2.5 (2016-09-29):
+  * added multiple items commenting operations
+  * sync UI node markers in the tree pane
+  * moved all custom colors to 'skin.css'
 v1.2 (2016-05-07):
   * updated to JUL v1.3.0
 v1.1.9 (2016-04-29):

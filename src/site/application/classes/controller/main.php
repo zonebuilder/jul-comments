@@ -1,9 +1,9 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 /*
-	JUL Comment Systems (JCS) version 1.2
+	JUL Comment Systems (JCS) version 1.2.5
  	Copyright (c) 2015 - 2016 The Zonebuilder (zone.builder@gmx.com)
 	http://sourceforge.net/projects/jul-comments/
-	Licenses: GPL2 or later; LGPLv3 or later (http://sourceforge.net/p/jul-designer/wiki/License/)
+	Licenses: GNU GPL2 or later; GNU LGPLv3 or later (http://sourceforge.net/p/jul-designer/wiki/License/)
 */ 
 
 /**
