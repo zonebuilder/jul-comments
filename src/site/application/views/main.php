@@ -5,7 +5,7 @@
 <title><?php echo $title; ?></title>
 <link rel='shortcut icon' href='media/favicon.ico' />
 <?php
-	echo Assets::factory('jcs')
+	echo Assets::factory('jcs-all')
 		->css('https://fonts.googleapis.com/css?family=Roboto+Condensed|Varela')
 		->css($ample_root.'languages/xhtml/themes/default/style-prod.css')
 		->css($ample_root.'languages/xul/themes/default/style-prod.css')

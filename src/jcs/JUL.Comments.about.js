@@ -33,7 +33,7 @@ JUL.Comments.about.ui = {
 	css: 'logo-bg',
 	hidden: true,
 	title: 'About',
-	width: 500,
+	width: 530,
 	height: 195,
 	'aml:resizable': false,
 	orient: 'horizontal',
@@ -50,7 +50,7 @@ JUL.Comments.about.ui = {
 			{tag: 'description',
 			 html: 'Copyright &copy; 2015 - 2016 <a target="_blank" href="' + ample.$encodeXMLCharacters(JUL.Comments.config.zb_link) + '">The Zonebuilder</a>'},
 			{tag: 'description',
-			 html: 'Powered by <a target="_blank" href="http://www.amplesdk.com/">Ample SDK</a> &amp; <a target="_blank" href="http://kohanaframework.org/">Kohana PHP</a>'}
+			 html: 'Powered by <a target="_blank" href="http://www.amplesdk.com/">Ample SDK</a>, <a target="_blank" href="http://nodejs.org/">Node.js</a>  &amp; <a target="_blank" href="http://kohanaframework.org/">Kohana PHP</a>'}
 		]}
 	],
 	listeners: {

@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 /*
-	JUL Comment Systems (JCS) version 1.2.5
+	JUL Comment Systems (JCS) version 1.3.0
  	Copyright (c) 2015 - 2016 The Zonebuilder (zone.builder@gmx.com)
 	http://sourceforge.net/projects/jul-comments/
 	Licenses: GNU GPL2 or later; GNU LGPLv3 or later (http://sourceforge.net/p/jul-designer/wiki/License/)
@@ -45,6 +45,10 @@ class Controller_Main extends Controller {
 		$aResponse = array();
 		$sRequestType = $this->request->method();
 		if ($sRequestType === Request::POST) {
+			if (!$this->validNS($this->request->post('ns')) || $this->request->post('type') !== 'project') {
+				$this->response->body('{"error":"Invalid operation"}');
+				return;
+			}
 			$sConfigFolder = $this->request->post('type').'s';
 			$sPath = Kohana::$config->load('main.work_dir').DIRECTORY_SEPARATOR.$sConfigFolder.DIRECTORY_SEPARATOR.
 				str_replace('.', DIRECTORY_SEPARATOR, $this->request->post('ns'));
@@ -97,6 +101,11 @@ class Controller_Main extends Controller {
 			}
 		}
 		if ($sRequestType === Request::GET) {
+			if (($this->request->query('operation') !== 'browse' && !$this->validNS($this->request->query('ns'))) ||
+				$this->request->query('type') !== 'project') {
+				$this->response->body('{"error":"Invalid operation"}');
+				return;
+			}
 			$sConfigFolder = $this->request->query('type').'s';
 			$sPath = Kohana::$config->load('main.work_dir').DIRECTORY_SEPARATOR.$sConfigFolder;
 			$sType = $this->request->query('type');
@@ -221,6 +230,14 @@ class Controller_Main extends Controller {
 		}
 		$oZip->close();
 		return true;
+	}
+	
+	/**
+	 * Checks if a NS is valid
+	 */
+	protected function validNS($sNS)
+	{
+		return preg_match('/[$\w\.]+/', $sNS);
 	}
 
 } // End Main

@@ -757,7 +757,7 @@ JUL.apply(JUL.Comments.project, /** @lends JUL.Comments.project */ {
 	onOpen: function() {
 		if (this.app.open.type === 'newProject' || this.app.open.type === 'editProject') {
 			var sNS = JUL.trim(ample.getElementById(this.app.state.controls.projectFields.ns).getAttribute('value'));
-			if (!(/^[\w\.]+$/).test(sNS)) {
+			if (!(/^[$\w\.]+$/).test(sNS)) {
 				window.alert("Invalid project namespace. Allowed characters: 'A-Z', 'a-z', '0-9', '_', '.'");
 				return;
 			}

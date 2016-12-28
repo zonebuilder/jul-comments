@@ -1,3 +1,5 @@
+v1.3.0 (2016-12-28):
+  * added Node.js server application
 v1.2.5 (2016-09-29):
   * added multiple items commenting operations
   * sync UI node markers in the tree pane
