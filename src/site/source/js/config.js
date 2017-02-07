@@ -6,7 +6,7 @@ JUL.apply(JUL.Comments.config, {
 		description: {desc: 'Provides a description of the object being documented', fields: {value: 'edit'}, template: '{value}'},
 		'class': {desc: 'Marks a function as being a constructor, and adds a description of the class', fields: {value: 'edit'}, template: '@{field}\t{value}'},
 		'namespace': {desc: 'Documents an object that is being used as a "namespace" to keep a collection of properties and methods under a single global name', fields: {value: 'edit'}, template: '@{field}\t{value}'},
-		fileOverview: {desc: 'Povides documentation for an entire file', fields: {value: 'edit'}, template: '@{field}\t{value}'},
+		fileOverview: {desc: 'Provides documentation for an entire file', fields: {value: 'edit'}, template: '@{field}\t{value}'},
 		author: {desc: 'Specifies the author of the code for a constructor, a method, or property', fields: {value: 'text'}, template: '@{field}\t{value}'},
 		name: {desc: 'Instructs JsDoc to use that name for the object', fields: {value: 'text'}, template: '@{field}\t{value}'},
 		version: {desc: 'Marks documented code with a version number or information about the version', fields: {value: 'text'}, template: '@{field}\t{value}'},

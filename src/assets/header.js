@@ -1,6 +1,6 @@
 /*
-	JUL Comment System (JCS) version 1.3.0
-	Copyright (c) 2015 - 2016 The Zonebuilder (zone.builder@gmx.com)
+	JUL Comment System (JCS) version 1.3.1
+	Copyright (c) 2015 - 2017 The Zonebuilder <zone.builder@gmx.com>
 	http://sourceforge.net/projects/jul-comments/
 	Licenses: GNU GPLv2 or later; GNU LGPLv3 or later (http://sourceforge.net/p/jul-comments/wiki/License/)
 */
@@ -20,8 +20,9 @@
 	 * downloading the collection of generated source files as a zip package
 	
 	System requirements
-	 * A CSS2 compliant web browser with JavaScript 1.5 or later engine
-	 * A web server with PHP 5.2.0 or later extension
+	 * a CSS2 compliant web browser with JavaScript 1.5 or later engine 
+	  * Node.js 0.10.0 or later installed 
+	  * OR a web server with PHP 5.2.0 or later extension 
 	 * 1024x768 minimum resolution
 */
 /* jshint browser: true, curly: true, eqeqeq: true, expr: true, funcscope: true, immed: true, latedef: true, loopfunc: true,  

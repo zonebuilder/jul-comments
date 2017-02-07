@@ -1,11 +1,11 @@
 /*
-	JUL Comment System (JCS) version 1.2.5
-	Copyright (c) 2015 - 2016 The Zonebuilder (zone.builder@gmx.com)
+	JUL Comment System (JCS) version 1.3.1
+	Copyright (c) 2015 - 2017 The Zonebuilder <zone.builder@gmx.com>
 	http://sourceforge.net/projects/jul-comments/
 	Licenses: GNU GPLv2 or later; GNU LGPLv3 or later (http://sourceforge.net/p/jul-comments/wiki/License/)
 */
 /**
-	@fileOverview	Thid file configures the application and project operations
+	@fileOverview	This file configures the application and project operations
 */
 /* jshint browser: true, curly: true, eqeqeq: true, expr: true, funcscope: true, immed: true, latedef: true, loopfunc: true,  
 	onevar: true, newcap: true, noarg: true, node: true, strict: true, trailing: true, undef: true, unused: vars, wsh: true */
@@ -252,8 +252,7 @@ JUL.Comments.project.logic =
 	},
 	'button-go': {
 		listeners: {
-			command: function (oEvent, oElement) {
-				alert(this.ns + ' ' + oEvent + ' ' +  oElement); return;
+			command: function () {
 			var sUrl = JUL.trim(ample.getElementById('textbox-address').getAttribute('value'));
 				if (!sUrl) { return; }
 				JUL.Comments.project.loadSite(sUrl);

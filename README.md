@@ -1,3 +1,7 @@
+<p align="center">
+<img alt="JUL" src="https://zonebuilder.github.io/media/braces120.png" width="160" height="120" />
+</p>
+
 JCS - JUL Comment System
 ========================
 
@@ -15,6 +19,7 @@ License
 -------
  
  Licensed under GNU GPLv2 or later and under GNU LGPLv3 or later. See enclosed 'licenses' folder.
+ 
 Features
 --------
 
@@ -23,7 +28,6 @@ Features
 * recognizes types of data and generates comments blocks accordingly
 * splits a JavaScript namespace into a custom number of child namespaces as documented source files with their corresponding code
 * downloading the collection of generated source files as a zip package
-
 
 System requirements
 -------------------
@@ -46,7 +50,7 @@ Run the following shell commands in order:
 ```
 The release will be in a 'build' folder. See Readme in that folder for further instructions.
 
-Downloads & User support
+Downloads & user support
 ------------------------
 
 [jul-comments project on SourceForge](http://sourceforge.net/projects/jul-comments/)

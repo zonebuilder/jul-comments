@@ -1,6 +1,6 @@
 /*
-	JUL Comment System (JCS) version 1.3.0
-	Copyright (c) 2015 - 2016 The Zonebuilder (zone.builder@gmx.com)
+	JUL Comment System (JCS) version 1.3.1
+	Copyright (c) 2015 - 2017 The Zonebuilder <zone.builder@gmx.com>
 	http://sourceforge.net/projects/jul-comments/
 	Licenses: GNU GPLv2 or later; GNU LGPLv3 or later (http://sourceforge.net/p/jul-comments/wiki/License/)
 */
@@ -31,13 +31,13 @@ var Assets = function(sGroup) {
 
 JUL.apply(Assets.prototype, {
 	/**
-	 * Adds an extenal CSS link
+	 * Adds an external CSS link
 	 */	 	
 	css: function(sUrl, oOptions) {
 		return this._add('css', sUrl, oOptions);
 	},
 	/**
-	 * Adds an extenal JS script
+	 * Adds an external JS script
 	 */	 	
 	js: function(sUrl, oOptions) {
 		return this._add('js', sUrl, oOptions);
@@ -138,7 +138,7 @@ JUL.apply(Assets.prototype, {
 		return this.render();
 	},
 	/**
-	 * Updtes the asset files
+	 * Updates the asset files
 	 */	 	
 	update: function(bCss, bJs) {
 		var fUpdate = this._onUpdate;
@@ -265,7 +265,7 @@ JUL.apply(Assets.prototype, {
 		return sUrl;
 	},
 	/**
-	 * Rehders a single asset
+	 * Renders a single asset
 	 */	 	
 	_renderItem: function(oAsset) {
 		var sText = '';
