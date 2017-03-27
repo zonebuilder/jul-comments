@@ -1,5 +1,5 @@
 /*
-	JUL Comment System (JCS) version 1.3.1
+	JUL Comment System (JCS) version 1.3.3
 	Copyright (c) 2015 - 2017 The Zonebuilder <zone.builder@gmx.com>
 	http://sourceforge.net/projects/jul-comments/
 	Licenses: GNU GPLv2 or later; GNU LGPLv3 or later (http://sourceforge.net/p/jul-comments/wiki/License/)
