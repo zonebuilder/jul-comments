@@ -1,3 +1,6 @@
+v1.3.5 (2017-07-27):
+  * published app to the NPM public repo
+  * added commend line interface
 v1.3.3 (2017-03-27):
   * maintenance release
 v1.3.1 (2017-02-07):

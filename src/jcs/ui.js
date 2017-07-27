@@ -156,7 +156,7 @@ JUL.Comments.project.ui =
 					{tag: 'splitter'},
 					{tag: 'vbox', id: 'vbox-preview', width: 370, children: [
 						{tag: 'description', id: 'description-preview', css: 'caption', value: 'Preview'},
-						{tag: 'textbox', id: 'textbox-preview', flex: 1, multiline: true, readonly: true, width: '100%'}
+						{tag: 'textbox', id: 'textbox-preview', flex: 1, css: 'code', multiline: true, readonly: true, width: '100%'}
 					]}
 				]},
 				{tag: 'splitter'},
@@ -169,7 +169,7 @@ JUL.Comments.project.ui =
 						{tag: 'button', id: 'button-file-properties', label: 'Properties'},
 						{tag: 'button', id: 'button-file-remove', label: 'Remove'}
 					]},
-					{tag: 'textbox', id: 'textbox-code', flex: 1, multiline: true, readonly: true, width: '100%'}
+					{tag: 'textbox', id: 'textbox-code', flex: 1, css: 'code', multiline: true, readonly: true, width: '100%'}
 				]}
 			]}
 		]},
@@ -503,7 +503,7 @@ JUL.Comments.edit.ui =
 	title: 'Edit',
 	width: 800,
 	children: [
-		{tag: 'textbox', id: 'textbox-edit', flex: 1, multiline: true, width: '100%'}
+		{tag: 'textbox', id: 'textbox-edit', flex: 1, css: 'code', multiline: true, width: '100%'}
 	]
 }
 /* end 'JUL Comment System - Edit dialog' UI */

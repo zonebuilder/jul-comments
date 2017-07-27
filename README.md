@@ -37,8 +37,21 @@ System requirements
 * OR a web server with PHP 5.2.0 or later extension 
 * 1024x768 minimum resolution
 
-Build & install
----------------
+Install & usage in Node
+-----------------------
+
+Install JCS globally:
+
+`npm install -g jul-comments`
+
+Run server application: `jul-comments`. Use `-h` switch to see more options.
+
+Use a browser to work with the app at `http://localhost:7780/`.
+
+By default, the generated code is compatible with `module.exports` and can be required in a Node script.
+
+Build & install from source
+---------------------------
 
 Install [Node.js](https://nodejs.org/) and [Git](https://git-scm.com/) command line in your system.
 Run the following shell commands in order:
@@ -48,7 +61,7 @@ Run the following shell commands in order:
 	npm run deps
 	npm run make
 ```
-The release will be in a 'build' folder. See Readme in that folder for further instructions.
+The release will be in the 'build' folder. The Node module will be in the 'build_node' folder.
 
 Downloads & user support
 ------------------------
