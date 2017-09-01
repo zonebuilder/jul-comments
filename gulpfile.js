@@ -16,8 +16,9 @@ var oConfig = {
 	concatDest: 'build/source/js',
 	node: 'src/node/**',
 	copyNode: ['build/**', '!build/Readme', '!build/Kohana-License', '!build/index.php', '!build/modules/**', '!build/system/**',
-		'!build/application/classes/**', '!build/application/config/**', '!build/application/views/**', '!build/application/bootstrap.php',
-		'!build/application/classes', '!build/application/config', '!build/application/views', '!build/application/i18n', '!build/application/messages',
+		'!build/application/classes/**', '!build/application/config/**', '!build/application/views/**',
+		'!build/application/bootstrap.php', '!build/application/classes', '!build/application/config',
+		'!build/application/views', '!build/application/i18n', '!build/application/messages',
 		 '!build/modules', '!build/system', 'README.md'],
 	destNode: 'build_node'
 };
@@ -74,11 +75,20 @@ oGulp.task('clean_node', function() {
 	.pipe(oPlugins.clean());
 });
 
+var fMark = null;
+var fDone = function() {
+	setTimeout(function() {
+		if (fMark) { fMark(); }
+		fMark = null;
+	}, 0);
+};
+
 oGulp.task('build_node', ['build'], function() {
 	return oGulp.src(oConfig.copyNode)
-	.pipe(oGulp.dest(oConfig.destNode));
+	.pipe(oGulp.dest(oConfig.destNode)).on('end', fDone);
 });
 
-oGulp.task('default', ['clean', 'clean_node'], function() {
+oGulp.task('default', ['clean', 'clean_node'], function(fCall) {
+	fMark = fCall;
 	oGulp.start('build_node');
 });
