@@ -1,6 +1,6 @@
 /*
-	JUL Comment System (JCS) version 1.3.6
-	Copyright (c) 2015 - 2017 The Zonebuilder <zone.builder@gmx.com>
+	JUL Comment System (JCS) version 1.3.7
+	Copyright (c) 2015 - 2018 The Zonebuilder <zone.builder@gmx.com>
 	http://sourceforge.net/projects/jul-comments/
 	Licenses: GNU GPLv2 or later; GNU LGPLv3 or later (http://sourceforge.net/p/jul-comments/wiki/License/)
 */
@@ -50,7 +50,7 @@ jul.ns('JUL.Comments.about.ui', {
 			{tag: 'description', css: 'logo-title', value: JUL.Comments.title},
 			{tag: 'description', value: 'Version ' + JUL.Comments.version},
 			{tag: 'description',
-			 html: 'Copyright &copy; 2015 - 2017 <a target="_blank" href="' + ample.$encodeXMLCharacters(JUL.Comments.config.zb_link) + '">The Zonebuilder</a>'},
+			 html: 'Copyright &copy; 2015 - 2018 <a target="_blank" href="' + ample.$encodeXMLCharacters(JUL.Comments.config.zb_link) + '">The Zonebuilder</a>'},
 			{tag: 'description',
 			 html: 'Powered by <a target="_blank" href="http://www.amplesdk.com/">Ample SDK</a>, <a target="_blank" href="http://nodejs.org/">Node.js</a> &amp; <a target="_blank" href="http://kohanaframework.org/">Kohana PHP</a>'}
 		]}

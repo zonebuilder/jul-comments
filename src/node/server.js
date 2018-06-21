@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /*
-	JUL Comment System (JCS) version 1.3.6
-	Copyright (c) 2015 - 2017 The Zonebuilder <zone.builder@gmx.com>
+	JUL Comment System (JCS) version 1.3.7
+	Copyright (c) 2015 - 2018 The Zonebuilder <zone.builder@gmx.com>
 	http://sourceforge.net/projects/jul-comments/
 	Licenses: GNU GPLv2 or later; GNU LGPLv3 or later (http://sourceforge.net/p/jul-comments/wiki/License/)
 */
@@ -40,9 +40,12 @@ var oOpts = require('cli').setApp(DOCROOT + 'package.json').enable('help', 'vers
 if (oOpts.address) { oConnection.host = oOpts.address; }
 if (oOpts.port) { oConnection.port = oOpts.port; }
 oApp.uri = 'http://' + oConnection.host + ':' + oConnection.port;
-if (oOpts.workdir[0] !== '(') {
+var sWorkDir = '';
+if (oOpts.workdir && oOpts.workdir.substr(0, 1) !== '(') {
+	sWorkDir = JUL.trim(require('path').resolve(oOpts.workdir.replace(/\//g, DIRECTORY_SEPARATOR)), DIRECTORY_SEPARATOR, false);
 	// this is a hack, it should be changed in future versions
-	oApp.Config('main').work_dir = require('path').resolve(oOpts.workdir);
+	oApp.Config('main').work_dir = sWorkDir;
+	oApp.Config('assets')._path = sWorkDir + DIRECTORY_SEPARATOR;
 }
 
 var oExpress = require('express');
@@ -53,7 +56,8 @@ oApp.server.engine('html', oEjs.renderFile);
 oEjs.delimiter = '?';
 oApp.server.set('views', APPPATH + 'views');
 oApp.server.set('view engine', 'html');
-var aStatic = ['amplesdk-mainta-0.9.4', 'assets', 'docs', 'media', 'source/js/jul.js'];
+oApp.server.use('/assets', oExpress.static(sWorkDir || DOCROOT + 'assets'));
+var aStatic = ['amplesdk-mainta-0.9.4', 'docs', 'media', 'source/js/jul.js'];
 for (var i = 0; i < aStatic.length; i++) {
 	oApp.server.use('/' + aStatic[i], oExpress.static(DOCROOT + aStatic[i].replace(/\//g, DIRECTORY_SEPARATOR)));
 }

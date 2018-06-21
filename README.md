@@ -40,6 +40,18 @@ System requirements
 Install & usage in Node
 -----------------------
 
+Install & run locally for Linux/UNIX shells:
+```bash
+npm install jul-comments
+"$(npm bin)/jul-comments"
+```
+
+Install & run locally for Windows/DOS shells:
+```cmd
+npm install jul-comments
+for /f "tokens=*" %i in ('npm bin') do @"%i\jul-comments"
+```
+
 Install JCS globally:
 
 `npm install -g jul-comments`
