@@ -1,3 +1,5 @@
+v1.3.8 (2018-06-30):
+  * updated JUL to version 1.5.4
 v1.3.7 (2018-06-21):
   * [Node] updated README.md with how to install & run the Node module locally
   * [Node] moved all write operations to the working folder (see -w switch)
