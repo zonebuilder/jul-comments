@@ -1,5 +1,5 @@
 /*
-	JUL Comment System (JCS) version 1.3.8
+	JUL Comment System (JCS) version 1.5
 	Copyright (c) 2015 - 2018 The Zonebuilder <zone.builder@gmx.com>
 	http://sourceforge.net/projects/jul-comments/
 	Licenses: GNU GPLv2 or later; GNU LGPLv3 or later (http://sourceforge.net/p/jul-comments/wiki/License/)
@@ -677,7 +677,7 @@ jul.apply(jul.get('JUL.Comments'), /** @lends JUL.Comments */ {
 			"\n\n" + sCode + "\n};" +
 			"\n\nif (module && module.exports) {" +
 			"\n\tmodule.exports = fInstance;\n}\nelse if (global) {\n\tfInstance(global);\n}\nreturn fInstance;" +
-			"\n\n})(typeof global !== 'undefined' ? global : window, typeof module !== 'undefined' ? module : null);\n";
+			"\n\n})(typeof global !== 'undefined' ? global : window, (typeof window === 'undefined' || !window.module) && typeof module !== 'undefined' ? module : null);\n";
 	},
 	/**
 		Hash between CSS selectors and lists of element properties
@@ -697,8 +697,11 @@ window.document.domanin = JUL.Comments.getSecondDomain();
 window.onbeforeunload = function(oEvent) {
 	JUL.Comments.savePrefs();
 	var oProject = JUL.Comments.project;
-	try { oProject.checkSave(); } catch (e) {}
 	if (oProject.state.jsonObject && oProject.state.notSaved) {
+		setTimeout(function() {
+			oProject.checkSave();
+			delete oProject.state.notSaved;
+		}, 0);
 		return 'Unsaved project changes will be lost';
 	}
 };
