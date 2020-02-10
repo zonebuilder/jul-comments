@@ -2,7 +2,7 @@
   "appId": "org.jul.comments",
   "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
   "productName": "JCS",
-  "electronVersion": "3.0.10",
+  "electronVersion": "3.1.13",
   "asar": false,
   "directories": {
     "output": "out",

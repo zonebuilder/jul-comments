@@ -1,7 +1,7 @@
 <?php
 /*
-	JUL Comment Systems (JCS) version 1.5
- 	Copyright (c) 2015 - 2018 The Zonebuilder <zone.builder@gmx.com>
+	JUL Comment Systems (JCS) version 1.5.8
+ 	Copyright (c) 2015 - 2020 The Zonebuilder <zone.builder@gmx.com>
 	http://sourceforge.net/projects/jul-comments/
 	Licenses: GNU GPL2 or later; GNU LGPLv3 or later (http://sourceforge.net/p/jul-designer/wiki/License/)
 */ 

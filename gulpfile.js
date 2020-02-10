@@ -56,6 +56,7 @@ oGulp.task('scripts', function() {
 	.pipe(oPlugins.stripComments())
 	.pipe(oPlugins.addSrc.prepend(oConfig.concatHeader))
 	.pipe(oPlugins.concat(oConfig.concatName, {newLine: ''}))
+	.pipe(oPlugins.replace('\t', '  '))
 	.pipe(oGulp.dest(oConfig.concatDest));
 });
 
